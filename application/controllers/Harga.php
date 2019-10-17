@@ -2,36 +2,36 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Komoditi extends CI_Controller {
-    
+class Harga extends CI_Controller {
+
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('mKomoditi','komoditi');
+        $this->load->model('mHarga','harga');
     }
     
     public function index()
     {
-        $data['komoditi'] = $this->komoditi->getAll();
+        $data['harga'] = $this->harga->getAll();
         echo "halo";
     }
 
     public function save(){
         $nama = $this->input->post('nama');
         $data = array("nama" =>$nama);
-        $this->komoditi->save($data);
+        $this->harga->save($data);
     }
 
     public function delete($id){
-        $this->komoditi->delete($id);
+        $this->harga->delete($id);
     }
 
     public function edit($id){
-        $this->komoditi->edit($id,$data);
+        $this->harga->edit($id,$data);
     }
 
 }
 
-/* End of file Komoditi.php */
+/* End of file Harga.php */
 
 ?>
