@@ -8,21 +8,24 @@ class Pasar extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('mPasar','pasar');
+        $this->load->model('mPasar');
     }
     
     public function index()
     {
 
         $data = [
-            'pasar' => $this->pasar->getAll(),
+            'data' => $this->mPasar->getAll(),
             'pages' => "pasar/index",
-            'data' => array()
         ];
 
         // $data['pasar'] = $this->pasar->getAll();
+        // $data['pages'] = "pasar/index";
+        // $data['data']['pasar'] = $this->mPasar->getAll();
         // echo "halo";
-        $this->load->view('admin/layouts/dashboard', $data);
+        // var_dump($data);
+        // echo json_encode($data);
+        $this->load->view('admin/layouts/dashboard',$data);
     }
 
     public function save(){

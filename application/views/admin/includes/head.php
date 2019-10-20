@@ -15,4 +15,8 @@
   <link href="<?php echo base_url('template_admin/css/black-dashboard.css?v=1.0.0') ?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?php echo base_url('template_admin/demo/demo.css') ?>" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+  
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
