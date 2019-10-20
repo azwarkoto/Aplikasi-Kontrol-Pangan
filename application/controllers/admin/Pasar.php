@@ -13,8 +13,16 @@ class Pasar extends CI_Controller {
     
     public function index()
     {
-        $data['pasar'] = $this->pasar->getAll();
-        echo "halo";
+
+        $data = [
+            'pasar' => $this->pasar->getAll(),
+            'pages' => "pasar/index",
+            'data' => array()
+        ];
+
+        // $data['pasar'] = $this->pasar->getAll();
+        // echo "halo";
+        $this->load->view('admin/layouts/dashboard', $data);
     }
 
     public function save(){
