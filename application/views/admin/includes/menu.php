@@ -26,5 +26,11 @@
         <p>Komoditi</p>
       </a>
     </li>
+    <li>
+      <a href="<?php echo base_url('admin/harga') ?>">
+        <i class="tim-icons icon-pin"></i>
+        <p>Harga</p>
+      </a>
+    </li>
   </ul>
 </div>
