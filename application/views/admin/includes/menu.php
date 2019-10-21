@@ -26,6 +26,11 @@
         <p>Komoditi</p>
       </a>
     </li>
-    
+    <li>
+      <a href="<?php base_url('#') ?>">
+        <i class="tim-icons icon-pin"></i>
+        <p>Statistik</p>
+      </a>
+    </li>
   </ul>
 </div>
