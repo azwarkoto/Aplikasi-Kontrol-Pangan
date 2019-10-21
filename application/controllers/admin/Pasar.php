@@ -18,13 +18,6 @@ class Pasar extends CI_Controller {
             'data' => $this->mPasar->getAll(),
             'pages' => "pasar/index",
         ];
-
-        // $data['pasar'] = $this->pasar->getAll();
-        // $data['pages'] = "pasar/index";
-        // $data['data']['pasar'] = $this->mPasar->getAll();
-        // echo "halo";
-        // var_dump($data);
-        // echo json_encode($data);
         $this->load->view('admin/layouts/dashboard',$data);
     }
 

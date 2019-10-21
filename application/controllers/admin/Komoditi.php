@@ -12,8 +12,11 @@ class Komoditi extends CI_Controller {
     
     public function index()
     {
-        $data['komoditi'] = $this->komoditi->getAll();
-        echo "halo";
+        $data = [
+            'data' => '',
+            'pages' => "komoditi/index",
+        ];
+        $this->load->view('admin/layouts/dashboard',$data);
     }
 
     public function save(){

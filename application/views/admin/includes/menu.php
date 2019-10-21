@@ -9,27 +9,21 @@
   </div>
   <ul class="nav">
     <li>
-      <a href="<?php base_url('#') ?>">
+      <a href="<?php echo base_url('#') ?>">
         <i class="tim-icons icon-chart-pie-36"></i>
         <p>Dashboard</p>
       </a>
     </li>
     <li>
-      <a href="<?php base_url('#') ?>">
+      <a href="<?php echo base_url('admin/pasar') ?>">
         <i class="tim-icons icon-atom"></i>
         <p>Pasar</p>
       </a>
     </li>
     <li>
-      <a href="<?php base_url('#') ?>">
+      <a href="<?php echo base_url('admin/komoditi') ?>">
         <i class="tim-icons icon-pin"></i>
         <p>Komoditi</p>
-      </a>
-    </li>
-    <li>
-      <a href="<?php base_url('#') ?>">
-        <i class="tim-icons icon-pin"></i>
-        <p>Statistik</p>
       </a>
     </li>
   </ul>
