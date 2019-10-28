@@ -11,6 +11,7 @@ class Api extends CI_Controller {
 		$this->load->model('mPasar','pasar');
 	}
 
+
 	function posts()
 	{
 		$this->db->select('table_komoditi.nama,table_pasar.nama,table_harga.harga,table_komoditi.gambar');
@@ -18,15 +19,14 @@ class Api extends CI_Controller {
 		$this->db->join('table_komoditi', 'table_harga.id_komoditi = table_komoditi.id');
 		$this->db->join('table_pasar', 'table_harga.id_pasar = table_pasar.id');
 		$query = $this->db->get()->result();
-
 		$result = array(
 			"result" => "OK",
 			"data" => $query
 		);
+		header('Content-Type: application/json');
 		echo json_encode($result);
 	}
+	
+	
 
 }
-
-/* End of file Api.php */
-/* Location: ./application/controllers/Api.php */
