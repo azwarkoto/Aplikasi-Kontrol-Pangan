@@ -7,7 +7,7 @@
       <?php $this->load->view('admin/includes/menu'); ?>
       
     </div>
-    <div class="main-panel">
+    <div class="main-panel" data="blue">
       <?php $this->load->view('admin/includes/header'); ?>
   
       <?php $this->load->view('admin/pages/'.$pages) ?>

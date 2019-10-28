@@ -7,13 +7,16 @@ class Harga extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('mHarga','harga');
+        $this->load->model('mHarga');
     }
     
     public function index()
     {
-        $data['harga'] = $this->harga->getAll();
-        echo "halo";
+        $data = [
+            'data' => $this->mHarga->getAll(),
+            'pages' => "harga/index",
+        ];
+        $this->load->view('admin/layouts/dashboard',$data);
     }
 
     public function save(){

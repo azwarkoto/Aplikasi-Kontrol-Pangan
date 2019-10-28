@@ -11,20 +11,32 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <label>Nama Pasar</label>
-                <input type="text" name="nama" class="form-control" placeholder="Nama Pasar">
+                <label>Pasar</label>
+                <select class="select2 form-control" style="width: 100%; height: 100%">
+                  <option>Select</option>
+                  <optgroup label="Alaskan/Hawaiian Time Zone">
+                    <option value="AK">Alaska</option>
+                    <option value="HI">Hawaii</option>
+                  </optgroup>
+                </select>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group">
-                <label>Alamat</label>
-                <input type="text" name="alamat" class="form-control" placeholder="Alamat">
+                <label>Komoditi</label>
+                <select class="select2 form-control" style="width: 100%; height: 100%">
+                  <option>Select</option>
+                  <optgroup label="Alaskan/Hawaiian Time Zone">
+                    <option value="AK">Alaska</option>
+                    <option value="HI">Hawaii</option>
+                  </optgroup>
+                </select>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group">
-                <label>Lokasi</label>
-                <input type="text" name="lokasi" class="form-control" placeholder="Lokasi">
+                <label>Harga</label>
+                <input type="text" name="harga" class="form-control" placeholder="Harga">
               </div>
             </div>
           </div>
@@ -37,16 +49,16 @@
 
       <div class="card">
         <div class="card-header">
-          <h5 class="title">Pasar</h5>
+          <h5 class="title">Harga</h5>
         </div>
         <div class="card-body">
           <table id="dt_pasar" class="table table-striped table-bordered" style="width:100%">
             <thead>
               <tr class="text-center">
                 <th style="width: 1%">No</th>
-                <th>Nama</th>
-                <th>Alamat</th>
-                <th>Lokasi</th>
+                <th>Harga</th>
+                <th>Komoditi</th>
+                <th>Harga</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -67,16 +79,12 @@
                     <a href="<?php echo base_url('admin/pasar/delete/').$value->id ?>" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" onclick="sweet()">
                       <i class="tim-icons icon-simple-remove"></i>
                     </a>
-
-                    <!-- <button aria-label="Try me! Example: A warning message, with a function attached to the 'Confirm'-button" onclick="executeExample('warningConfirm')">
-          Try me!
-        </button> -->
                   </td>
                 </tr>
                 <?php $i++ ?>
               <?php endforeach ?>
-              
-              
+
+
             </tbody>
           </table>
         </div>
@@ -88,7 +96,8 @@
 <script>
  $(document).ready(function() {
   $('#dt_pasar').DataTable();
-  } );
+  $('#select2').select2();
+} );
  function sweet (){
    Swal.fire({
     title: 'Are you sure?',
@@ -107,6 +116,6 @@
         )
     }
   }) 
-  }
+}
 
 </script>

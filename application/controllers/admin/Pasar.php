@@ -26,15 +26,15 @@ class Pasar extends CI_Controller {
         $alamat = $this->input->post('alamat');
         $lokasi = $this->input->post('lokasi');
         $data = array("nama" =>$nama,"alamat" => $alamat, "lokasi" => $lokasi);
-        $this->pasar->save($data);
+        $this->mPasar->save($data);
     }
 
     public function delete($id){
-        $this->pasar->delete($id);
+        $this->mPasar->delete($id);
     }
 
     public function edit($id){
-        $this->pasar->edit($id,$data);
+        $this->mPasar->edit($id,$data);
     }
 
 }

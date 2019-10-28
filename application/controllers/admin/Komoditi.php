@@ -7,13 +7,13 @@ class Komoditi extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('mKomoditi','komoditi');
+        $this->load->model('mKomoditi');
     }
     
     public function index()
     {
         $data = [
-            'data' => '',
+            'data' => $this->mKomoditi->getAll(),
             'pages' => "komoditi/index",
         ];
         $this->load->view('admin/layouts/dashboard',$data);

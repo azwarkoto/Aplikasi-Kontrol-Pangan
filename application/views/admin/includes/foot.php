@@ -18,9 +18,16 @@
 <script src="<?php echo base_url('template_admin/demo/demo.js') ?>"></script>
 <!-- datatables -->
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-
-<!-- <script src="<?php echo base_url('template_admin/js/datatables/dataTables.buttons.min.js') ?>"></script> -->
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<!-- sweetalert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<!-- select2 -->
+<!-- <script src="<?php echo base_url('assets/js/select2.full.min.js') ?>"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.full.min.js"></script>
+<!-- <script src="https://pixinvent.com/bootstrap-admin-template/robust/app-assets/vendors/js/forms/select/select2.full.min.js"></script> -->
+<script src="https://pixinvent.com/bootstrap-admin-template/robust/app-assets/js/scripts/forms/select/form-select2.min.js"></script>
+<!-- dropify -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
 <script>
   $(document).ready(function() {
     $().ready(function() {

@@ -10,6 +10,7 @@ class mPasar extends CI_Model {
     }
 
     public function delete($id){
+        $this->db->where('id', $id);
         $query = $this->db->delete('table_pasar');
         return $query;
     }

@@ -17,6 +17,14 @@
   <link href="<?php echo base_url('template_admin/demo/demo.css') ?>" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-  
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <!-- sweetalert2 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.css">
+  <!-- select2 -->
+  <!-- <link href="<?php echo base_url('assets/css/select2.min.css') ?>" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css">
+  <!-- <link rel="stylesheet" href="https://pixinvent.com/bootstrap-admin-template/robust/app-assets/vendors/css/forms/selects/select2.min.css"> -->
+  <!-- dropify -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
