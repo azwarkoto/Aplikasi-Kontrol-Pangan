@@ -14,10 +14,11 @@ class Api extends CI_Controller {
 
 	function posts()
 	{
-		$this->db->select('table_komoditi.nama,table_pasar.nama,table_harga.harga,table_komoditi.gambar');
+		$this->db->select('table_komoditi.nama as komoditi,table_pasar.nama as pasar,table_harga.harga');
 		$this->db->from('table_harga');
 		$this->db->join('table_komoditi', 'table_harga.id_komoditi = table_komoditi.id');
 		$this->db->join('table_pasar', 'table_harga.id_pasar = table_pasar.id');
+		$this->db->order_by('table_pasar.nama', 'asc');
 		$query = $this->db->get()->result();
 		$result = array(
 			"result" => "OK",
@@ -26,7 +27,7 @@ class Api extends CI_Controller {
 		header('Content-Type: application/json');
 		echo json_encode($result);
 	}
-	
+
 	
 
 }

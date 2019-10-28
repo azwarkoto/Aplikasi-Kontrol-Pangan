@@ -77,7 +77,6 @@ class TesApi extends CI_Controller {
 		// }
 		// return $query;
 	}
-
 }
 
 /* End of file TesApi.php */
