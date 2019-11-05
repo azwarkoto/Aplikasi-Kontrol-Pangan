@@ -9,7 +9,7 @@
   </div>
   <ul class="nav">
     <li>
-      <a href="<?php echo base_url('#') ?>">
+      <a href="<?php echo base_url('admin/dashboard') ?>">
         <i class="tim-icons icon-chart-pie-36"></i>
         <p>Dashboard</p>
       </a>
