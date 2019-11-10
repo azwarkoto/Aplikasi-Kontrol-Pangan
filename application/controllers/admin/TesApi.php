@@ -5,7 +5,7 @@ class TesApi extends CI_Controller {
 
 	public function index()
 	{
-			
+		
 	}
 
 	function posts()
@@ -76,6 +76,12 @@ class TesApi extends CI_Controller {
 		// 	}
 		// }
 		// return $query;
+	}
+
+	function userPost()
+	{
+		
+
 	}
 }
 

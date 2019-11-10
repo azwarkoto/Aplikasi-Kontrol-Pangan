@@ -11,6 +11,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
+                <input type="hidden" name="id" class="form-control">
                 <label>Nama Pasar</label>
                 <input type="text" name="nama" class="form-control" placeholder="Nama Pasar">
               </div>
@@ -30,6 +31,7 @@
           </div>
           <div class="card-footer">
             <button type="submit" class="btn btn-primary animation-on-hover">Submit</button>
+            <button type="reset" class="btn btn-primary animation-on-hover">Cancel</button>
           </div>
           <?php echo form_close(); ?>
         </div>
@@ -61,16 +63,12 @@
                   <td><?php echo $value->lokasi ?></td>
                   
                   <td class="td-actions text-center">
-                    <a href="#" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon">
+                    <a href="#" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon" onclick="edit(<?php echo $value->id ?>)">
                       <i class="tim-icons icon-pencil"></i>
                     </a>
-                    <a href="<?php echo base_url('admin/pasar/delete/').$value->id ?>" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" onclick="sweet()">
+                    <a href="<?php echo base_url('admin/pasar/delete/').$value->id ?>" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon">
                       <i class="tim-icons icon-simple-remove"></i>
                     </a>
-
-                    <!-- <button aria-label="Try me! Example: A warning message, with a function attached to the 'Confirm'-button" onclick="executeExample('warningConfirm')">
-          Try me!
-        </button> -->
                   </td>
                 </tr>
                 <?php $i++ ?>
@@ -88,7 +86,7 @@
 <script>
  $(document).ready(function() {
   $('#dt_pasar').DataTable();
-  } );
+} );
  function sweet (){
    Swal.fire({
     title: 'Are you sure?',
@@ -107,6 +105,23 @@
         )
     }
   }) 
-  }
+}
+
+function edit(id){
+  $.ajax({
+    url: "<?php echo base_url("admin/pasar/getById/") ?>" + id,
+    type: "GET",
+    dataType: "JSON",
+    success:function(data){
+      $('[name="nama"]').val(data.nama);
+      $('[name="alamat"]').val(data.alamat);
+      $('[name="lokasi"]').val(data.lokasi);
+      $('[name="id"]').val(data.id);
+    },
+    error: function (jqXHR, textStatus, errorThrown){
+      alert(textStatus);
+    }
+  })
+}
 
 </script>
