@@ -46,6 +46,22 @@ class Harga extends CI_Controller {
         $this->mHarga->edit($id,$data);
     }
 
+    public function getById($id)
+    {
+        $get = $this->mHarga->get($id);
+        foreach ($get as $value) {
+            $result = array(
+                "id"=> $value->id,
+                "id_pasar"=> $value->id_pasar,
+                "id_komoditi"=> $value->id_komoditi,
+                "harga"=> $value->harga,
+                "tanggal"=> $value->tanggal,
+            );
+        }
+        header("Content-Type: application/json; charset=UTF-8");
+        echo json_encode($result);
+    }
+
 }
 
 /* End of file Harga.php */

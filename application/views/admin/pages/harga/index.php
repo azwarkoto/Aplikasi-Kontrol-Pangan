@@ -71,7 +71,7 @@
                   <td><?php echo $value->harga ?></td>
                   
                   <td class="td-actions text-center">
-                    <a href="#" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon">
+                    <a href="#" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon" onclick="edit(<?php echo $value->id ?>)">
                       <i class="tim-icons icon-pencil"></i>
                     </a>
                     <a href="<?php echo base_url('admin/harga/delete/').$value->id ?>" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon">
@@ -81,13 +81,10 @@
                 </tr>
                 <?php $i++ ?>
               <?php endforeach ?>
-
-
             </tbody>
           </table>
         </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -95,7 +92,8 @@
  $(document).ready(function() {
   $('#dt_pasar').DataTable();
   $('#select2').select2();
-} );
+} 
+);
  function sweet (){
    Swal.fire({
     title: 'Are you sure?',
@@ -114,6 +112,22 @@
         )
     }
   }) 
+}
+
+function edit(id){
+  $.ajax({
+    url: "<?php echo base_url("admin/harga/getById/") ?>" + id,
+    type: "GET",
+    dataType: "JSON",
+    success:function(data){
+      $('[name="pasar"]').val(data.id_pasar);
+      $('[name="komoditi"]').val(data.id_komoditi);
+      $('[name="harga"]').val(data.harga);
+    },
+    error: function (jqXHR, textStatus, errorThrown){
+      alert(textStatus);
+    }
+  })
 }
 
 </script>
