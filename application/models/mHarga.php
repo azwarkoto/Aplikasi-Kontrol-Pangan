@@ -10,6 +10,7 @@ class mHarga extends CI_Model {
     }
 
     public function delete($id){
+        $this->db->where('id', $id);
         $query = $this->db->delete('table_harga');
         return $query;
     }
@@ -21,8 +22,12 @@ class mHarga extends CI_Model {
     }
 
     public function getAll(){
-        $query = $this->db->get('table_harga');
-        return $query->result();
+        $this->db->select('table_pasar.nama as pasar, table_komoditi.nama as komoditi, harga, tanggal,table_harga.id as id');
+        $this->db->from('table_harga');
+        $this->db->join('table_pasar', 'table_pasar.id = table_harga.id_pasar');
+        $this->db->join('table_komoditi', 'table_komoditi.id = table_harga.id_komoditi');
+        $query = $this->db->get()->result();
+        return $query;
     }
 
     public function edit($id,$data){

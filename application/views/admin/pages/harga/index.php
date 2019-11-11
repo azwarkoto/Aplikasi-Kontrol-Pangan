@@ -7,29 +7,27 @@
           <h5 class="title">Pasar</h5>
         </div>
         <div class="card-body">
-          <?php echo form_open('admin/Pasar/save'); ?>
+          <?php echo form_open('admin/harga/save'); ?>
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
                 <label>Pasar</label>
-                <select class="select2 form-control" style="width: 100%; height: 100%">
+                <select class="select2 form-control" style="width: 100%; height: 100%" name="pasar">
                   <option>Select</option>
-                  <optgroup label="Alaskan/Hawaiian Time Zone">
-                    <option value="AK">Alaska</option>
-                    <option value="HI">Hawaii</option>
-                  </optgroup>
+                  <?php foreach ($pasar as $value): ?>
+                    <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
+                  <?php endforeach ?>
                 </select>
               </div>
             </div>
             <div class="col-md-12">
               <div class="form-group">
                 <label>Komoditi</label>
-                <select class="select2 form-control" style="width: 100%; height: 100%">
+                <select class="select2 form-control" style="width: 100%; height: 100%" name="komoditi">
                   <option>Select</option>
-                  <optgroup label="Alaskan/Hawaiian Time Zone">
-                    <option value="AK">Alaska</option>
-                    <option value="HI">Hawaii</option>
-                  </optgroup>
+                  <?php foreach ($komoditi as $value): ?>
+                    <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
+                  <?php endforeach ?>
                 </select>
               </div>
             </div>
@@ -68,15 +66,15 @@
               <?php foreach ($data as $value): ?>
                 <tr>
                   <td class="text-center"><?php echo $i ?></td>
-                  <td><?php echo $value->nama ?></td>
-                  <td><?php echo $value->alamat ?></td>
-                  <td><?php echo $value->lokasi ?></td>
+                  <td><?php echo $value->pasar ?></td>
+                  <td><?php echo $value->komoditi ?></td>
+                  <td><?php echo $value->harga ?></td>
                   
                   <td class="td-actions text-center">
                     <a href="#" rel="tooltip" class="btn btn-success btn-sm btn-round btn-icon">
                       <i class="tim-icons icon-pencil"></i>
                     </a>
-                    <a href="<?php echo base_url('admin/pasar/delete/').$value->id ?>" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon" onclick="sweet()">
+                    <a href="<?php echo base_url('admin/harga/delete/').$value->id ?>" rel="tooltip" class="btn btn-danger btn-sm btn-round btn-icon">
                       <i class="tim-icons icon-simple-remove"></i>
                     </a>
                   </td>
