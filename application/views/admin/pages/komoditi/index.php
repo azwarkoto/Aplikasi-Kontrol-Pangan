@@ -7,7 +7,7 @@
 					<h5 class="title">Komoditi</h5>
 				</div>
 				<div class="card-body">
-					<?php echo form_open('admin/Komoditi/save'); ?>
+					<?php echo form_open_multipart('admin/Komoditi/save'); ?>	
 					<div class="row">
 			            <input type="hidden" name="id" class="form-control">
 						<div class="col-md-12">
@@ -19,7 +19,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<label>Gambar</label>
-								<input type="file" id="input-file-now" class="dropify" name="alamat" />
+								<input type="file" id="input-file-now" class="dropify" name="berkas" />
 							</div>
 						</div>
 					</div>

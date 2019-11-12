@@ -37,10 +37,10 @@ class Home extends CI_Controller {
 			}
 		}
 
-		// header("Content-Type: application/json; charset=UTF-8");
-		// echo json_encode($hasil);
+		header("Content-Type: application/json; charset=UTF-8");
+		echo json_encode($hasil);
 
-		return $hasil;
+		// return $hasil;
 	}
 
 	public function cekHarga($id, $harga_avg)
@@ -56,17 +56,17 @@ class Home extends CI_Controller {
 			if ($harga_avg2 < $harga_avg) {
 				$status[] = array(
 					'harga' => "turun",
-					'beda' => ceil($harga_avg - $harga_avg2),
+					'beda' => ceil($harga_avg - $harga_avg2)
 				);
 			}else if ($harga_avg2 > $harga_avg) {
 				$status[] = array(
 					'harga' => "naik",
-					'beda' => ceil($harga_avg2 - $harga_avg),
+					'beda' => ceil($harga_avg2 - $harga_avg)
 				);
-			}elseif ($harga_avg2 == $harga_avg) {
+			}else{
 				$status[] = array(
 					'harga' => "tetap",
-					'beda' => $harga_avg,
+					'beda' => $harga_avg
 				);
 			}
 		}
