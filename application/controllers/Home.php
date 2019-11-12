@@ -37,10 +37,10 @@ class Home extends CI_Controller {
 			}
 		}
 
-		header("Content-Type: application/json; charset=UTF-8");
-		echo json_encode($hasil);
+		// header("Content-Type: application/json; charset=UTF-8");
+		// echo json_encode($hasil);
 
-		// return $hasil;
+		return $hasil;
 	}
 
 	public function cekHarga($id, $harga_avg)

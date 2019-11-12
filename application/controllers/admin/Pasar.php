@@ -31,7 +31,7 @@ class Pasar extends CI_Controller {
         if ($id == "") {
             $this->mPasar->save($data);   
         }else {
-            $this->edit($id, $data);
+            $this->mPasar->edit($id, $data);
         }
         
         redirect('admin/pasar','refresh');

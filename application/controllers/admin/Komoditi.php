@@ -43,7 +43,11 @@ class Komoditi extends CI_Controller {
                 );
                 $this->mKomoditi->save($komoditi);   
             }else {
-                $this->edit($id, $komoditi);
+                $komoditi = array(
+                    "nama" => $nama,
+                    "gambar" =>  $data['upload_data']['full_path']
+                );
+                $this->mKomoditi->edit($id, $komoditi);
             }
         }
 
