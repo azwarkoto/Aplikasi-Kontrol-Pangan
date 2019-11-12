@@ -8,11 +8,15 @@ class Harga extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('mHarga');
+        $this->load->model('mKomoditi');
+        $this->load->model('mPasar');
     }
     
     public function index()
     {
         $data = [
+            'komoditi' => $this->mKomoditi->getAll(),
+            'pasar' => $this->mPasar->getAll(),
             'data' => $this->mHarga->getAll(),
             'pages' => "harga/index",
         ];
@@ -20,17 +24,26 @@ class Harga extends CI_Controller {
     }
 
     public function save(){
-        $nama = $this->input->post('nama');
-        $data = array("nama" =>$nama);
-        $this->harga->save($data);
+        $pasar = $this->input->post('pasar');
+        $komoditi = $this->input->post('komoditi');
+        $harga = $this->input->post('harga');
+        $data = array(
+            "id_pasar" => $pasar,
+            "id_komoditi" => $komoditi,
+            "harga" => $harga,
+            "tanggal" => date("Y-m-d")
+        );
+        $this->mHarga->save($data);
+        redirect('admin/harga','refresh');
     }
 
     public function delete($id){
-        $this->harga->delete($id);
+        $this->mHarga->delete($id);
+        redirect('admin/harga','refresh');
     }
 
     public function edit($id){
-        $this->harga->edit($id,$data);
+        $this->mHarga->edit($id,$data);
     }
 
     public function getById($id)
