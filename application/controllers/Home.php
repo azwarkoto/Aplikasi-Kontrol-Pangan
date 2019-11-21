@@ -30,6 +30,7 @@ class Home extends CI_Controller {
 				$hasil[] = array(
 					"row" => "{$find->num_rows()}",
 					"id" => $row->id,
+					"gambar" => $row->gambar,
 					"nama" => $row->nama,
 					"harga" => ceil($harga_avg),
 					"status" => $this->cekHarga($row->id,$harga_avg)

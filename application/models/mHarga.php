@@ -17,6 +17,7 @@ class mHarga extends CI_Model {
 
     public function get($id){
         $this->db->where('id', $id);
+        $this->db->order_by('id','desc');
         $query = $this->db->get('table_harga');
         return $query->result();
     }

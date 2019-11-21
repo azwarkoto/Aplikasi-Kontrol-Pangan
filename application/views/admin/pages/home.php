@@ -29,6 +29,8 @@
         font-size: 3.5rem;
       }
     }
+
+    .carousel {overflow:hidden}
   </style>
   <!-- Custom styles for this template -->
   <link href="https://getbootstrap.com/docs/4.3/examples/album/album.css" rel="stylesheet">
@@ -57,8 +59,9 @@
 
   <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading">Album example</h1>
-      <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+      <h1 class="jumbotron-heading">Pasar</h1>
+      <p class="lead text-muted">
+      Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
     </div>
   </section>
 
@@ -69,7 +72,7 @@
         <?php foreach ($pangan as $value): ?>
           <div class="col-md-3">
             <div class="card mb-4 shadow-sm">
-              <img class="mx-auto d-block pt-2" src="<?php echo base_url('assets/images/cabe-merah-keriting.png'); ?>" alt="" width="80px">
+              <img class="mx-auto d-block pt-2" src="<?php echo base_url('gambar/'.substr($value['gambar'], 31))?>" alt="" width="80px">
               <!-- <title>Placeholder</title> -->
               <div class="card-body">
                 <p class="card-text"><?php echo $value['nama'] ?></p>

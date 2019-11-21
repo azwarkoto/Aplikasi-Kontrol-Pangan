@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Nov 2019 pada 07.45
+-- Waktu pembuatan: 21 Nov 2019 pada 03.00
 -- Versi server: 10.1.35-MariaDB
 -- Versi PHP: 7.2.9
 
@@ -58,7 +58,9 @@ INSERT INTO `table_harga` (`id`, `id_pasar`, `id_komoditi`, `harga`, `tanggal`) 
 (23, 3, 8, 31000, '2019-11-12'),
 (24, 3, 22, 40000, '2019-11-12'),
 (25, 3, 34, 30400, '2019-11-12'),
-(26, 4, 5, 9000, '2019-11-12');
+(26, 4, 5, 9000, '2019-11-12'),
+(27, 12, 24, 1000, '2019-11-19'),
+(28, 11, 34, 100, '2019-11-19');
 
 -- --------------------------------------------------------
 
@@ -109,8 +111,6 @@ INSERT INTO `table_komoditi` (`id`, `nama`, `gambar`) VALUES
 (33, 'Susu Kental Enak 200gr', ''),
 (34, 'Margarin Blueband Cup', ''),
 (35, 'Margarin Blueband Sachet', ''),
-(36, 'a', ''),
-(37, 'tes', ''),
 (38, 'asd', 'C:/xampp2/htdocs/pangan/gambar/ayam-broiler-ras.png'),
 (39, 'asd', 'C:/xampp2/htdocs/pangan/gambar/ayam-broiler-ras1.png'),
 (40, 'as', 'C:/xampp2/htdocs/pangan/gambar/cabe-rawit-merah.png'),
@@ -143,7 +143,7 @@ INSERT INTO `table_pasar` (`id`, `nama`, `alamat`, `lokasi`) VALUES
 (9, 'Pasar Pandanwangi', 'Jalan Simpang Laksda Adi Sucipto, Kelurahan Pandanwangi, Kecamatan Blimbing, Kota Malang', 'https://goo.gl/maps/zW9G4FSAhZzJCk8y5'),
 (10, 'Pasar Kasin', 'Jalan IR Rais, Kelurahan Tanjungrejo, Kecamatan Sukun, Kota Malang', 'https://goo.gl/maps/rTTAA93smJBAtcRy8'),
 (11, 'Pasar Kebalen', 'Jalan Zaenal Zakse, No. 28-38, Kelurahan Jodipan, Kecamatan Blimbing, Kota Malang', 'https://goo.gl/maps/tMgUZbXpgprwk1jL6'),
-(12, 'Pasar Kota Lama', 'Gang 5, No. 3B, Kelurahan Mergosono, Kecamatan Kedungkandang, Kota Malang', 'https://goo.gl/maps/cTBmkYVoDM96WmAt9'),
+(12, 'tes1', 'tes', 'tes'),
 (14, 'Pasar Tlogowaru', 'Jalan Tlogo Waru, Kelurahan Tlogowaru, Kecamatan Kedungkandang, Kota Malang', 'https://goo.gl/maps/EAk4PJYnjkdQJJ2K7');
 
 -- --------------------------------------------------------
@@ -207,7 +207,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `table_harga`
 --
 ALTER TABLE `table_harga`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT untuk tabel `table_komoditi`

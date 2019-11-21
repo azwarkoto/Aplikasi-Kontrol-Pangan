@@ -25,6 +25,7 @@
 					</div>
 					<div class="card-footer">
 						<button type="submit" class="btn btn-fill btn-primary">Save</button>
+						<button type="reset" class="btn btn-primary animation-on-hover">Cancel</button>
 					</div>
 					<?php echo form_close(); ?>
 				</div>
